@@ -7,7 +7,7 @@ class ProductManager {
 
     addProduct(product){
         if (!this.isProductvalid(product)){
-            console.error("Error: El producto no es válido")
+            console.log("Error: El producto no es válido")
             return
         }
         if (this.isCodeDuplicate(product.code)){
@@ -51,11 +51,11 @@ class ProductManager {
 
 //Instancia de ProducManager
 
-const ProductManager = new ProductManager()
+const productManager = new ProductManager()
 
 //Agregar Products 
 
-ProductManager.addProduct({
+productManager.addProduct({
     tittle: "Producto 1",
     description: "Detalle del Producto 1",
     price: 20,
@@ -64,7 +64,7 @@ ProductManager.addProduct({
     stock: 5
 })
 
-ProductManager.addProduct({
+productManager.addProduct({
     tittle: "Producto 2",
     description: "Detalle del Producto 2",
     price: 30,
@@ -75,12 +75,12 @@ ProductManager.addProduct({
 
 //Obtener Products
 
-const productsList = ProductManager.getProducts()
+const productsList = productManager.getProducts()
 
 //Obtener Products por ID
 
-const productId = ProductManager.getProductById(2)
+const productId = productManager.getProductById(2)
 
 //Obtener Products inexistente
 
-const noProduct = ProductManager.getProductById(8)
+const noProduct = productManager.getProductById(8)
